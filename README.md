@@ -1,6 +1,6 @@
 This Quiz App Has been made with node.js, js and html
 
-**Uses nodemailer for sending mail
+**Uses nodemailer for sending mail**
 
 use `npm install nodemailer express nedb`
 
