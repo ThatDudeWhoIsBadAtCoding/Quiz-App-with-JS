@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie = edge">
+    <script src="login.js"></script>
+    <title>Sign Up!</title>
+    <link rel="stylesheet" href="app.css">
+     <script src="signup.js"></script>
+  </head>
+  <body>
+    <form id="e" method = "post">
+        <h1>Sign Up!</h1>
+        <input type="text" id="email" placeholder="email">
+        <input type="text" id="name" placeholder="username">
+        <input type="password" placeholder="password" id="password">
+        <button type="button" onclick="signup()" class="btn">Sign Up!</button>
+        <h3 id="status"></h3>
+        <input type="text" id="code" placeholder="Enter Code" class="hidden">
+        <button type="button" id="ss" class="btn hidden">Submit Code</button>
+    </form>
+  </body>
+</html>
