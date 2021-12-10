@@ -78,17 +78,17 @@ async function send(mail, code) {
       port: 587,
       secure: false, 
       auth: {
-        user: "yessirpock12@gmail.com",
-        pass: "CHAIFRIENDS!)@%",
+        user: /*Your email here*/,
+        pass: /*Your password here*/,
       },
     });
   
     // send mail with defined transport object
     let info = await transporter.sendMail({
-      from: '"Verification" yessirpock12@gmail.com', // sender address
+      from: '"Verification" Your email here', // TODO
       to: mail, // list of receivers
       subject: "Verification mail", // Subject line
-      text: "Hello world?", // plain text body
+      text: "Hello There User!", // plain text body
       html: "Your code is " + code, // html body
     });
   }
