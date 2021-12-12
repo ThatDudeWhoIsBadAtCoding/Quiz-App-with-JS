@@ -44,7 +44,6 @@ fetch('https://opentdb.com/api.php?amount=50&category=9&difficulty=hard&type=mul
     })
 
 //CONSTANTS
-var time = 45;
 const correctBonus = 100;
 const maxQuestions = 10;
 
