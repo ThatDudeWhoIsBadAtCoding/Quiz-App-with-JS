@@ -15,6 +15,6 @@ else {
     else{
         displayScore.innerText = `Your final score was ${mostRecentScore} points! \n You beat your highscore by 
         ${diff} points!`;
-        update();
+        update(false);
     }
 }
