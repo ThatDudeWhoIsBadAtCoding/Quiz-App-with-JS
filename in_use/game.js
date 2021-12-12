@@ -12,6 +12,7 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let avalibleQuestions = [];
+let time = 45;
 
 
 let questions = [];
@@ -43,7 +44,6 @@ fetch('https://opentdb.com/api.php?amount=50&category=9&difficulty=hard&type=mul
     })
 
 //CONSTANTS
-var time = 45;
 const correctBonus = 100;
 const maxQuestions = 10;
 
@@ -71,8 +71,8 @@ startGame = () => {
 
 getNewQuestion = async () => {    
     if (avalibleQuestions.length === 0 || questionCounter >= maxQuestions) {
-    let acc = localStorage.getItem("account");
-    localStorage.setItem("mostRecentScore", score)
+    let acc = JSON.parse(localStorage.getItem("account"));
+    console.log(acc);
     let url = '/end.html'
     if(!acc.type) return setTimeout(() => window.location.assign(url), 500)
     const res = await fetch("/update", {
@@ -83,7 +83,7 @@ getNewQuestion = async () => {
         const data = await res.json();
         console.log(data.changed, data.diff);
         if(data.changed){
-            url += "?diff=" + data.diff;
+            url += "?diff=" + data.diff + "&mostRecentScore=" + score;
             localStorage.removeItem("highscore");
             localStorage.setItem("highscore", score)
         }
@@ -135,7 +135,8 @@ choices.forEach((choice) => {
     });
 });
 
-increaseScore = (num) => {
+const increaseScore = num => {
      score += num;
      scoreText.innerText = score;
 }
+
