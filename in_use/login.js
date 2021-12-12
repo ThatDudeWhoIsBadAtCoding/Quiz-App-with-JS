@@ -22,10 +22,8 @@ fetch("/login", headers).then(res =>{
 }).then((data) => {
   setTimeout(function() {
     localStorage.clear();
-    console.log(data.highscore)
-    window.location.assign(`/index.html?acc=${name}&highscore=${data.highscore}`)
+    localStorage.setItem("account", JSON.stringify({type: true, name: data.name, highscore: data.highscore}))
+    window.location.assign(`/index.html`)
   }, 1)
 })
 }
-
-
