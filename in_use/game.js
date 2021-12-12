@@ -71,19 +71,23 @@ startGame = () => {
 
 getNewQuestion = async () => {    
     if (avalibleQuestions.length === 0 || questionCounter >= maxQuestions) {
+    let acc = localStorage.getItem("account");
     localStorage.setItem("mostRecentScore", score)
+    let url = '/end.html'
+    if(!acc.type) return setTimeout(() => window.location.assign(url), 500)
     const res = await fetch("/update", {
             method: "POST",
-            body: JSON.stringify({ name: localStorage.getItem("name"), score }),
+            body: JSON.stringify({ name: acc.name, score}),
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
         });
         const data = await res.json();
         console.log(data.changed, data.diff);
         if(data.changed){
+            url += "?diff=" + data.diff;
             localStorage.removeItem("highscore");
             localStorage.setItem("highscore", score)
         }
-        setTimeout( () => window.location.assign('/end.html'), 500)
+        setTimeout( () => window.location.assign(url), 500)
     return
 }
     questionCounter++;
