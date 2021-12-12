@@ -1,6 +1,6 @@
 This Quiz App Has been made by James Quick On Udemy
 
-https://www.udemy.com/course/build-a-quiz-app-with-html-css-and-javascript/learn/lecture/13685348?start=0#overview
+Link to the entire course for free on udemy :D -> https://www.udemy.com/course/build-a-quiz-app-with-html-css-and-javascript/learn/lecture/13685348?start=0#overview
 
 I thought I should update it by adding a login module with node.js
 
