@@ -73,7 +73,7 @@ getNewQuestion = async () => {
     if (avalibleQuestions.length === 0 || questionCounter >= maxQuestions) {
     let acc = JSON.parse(localStorage.getItem("account"));
     console.log(acc);
-    let url = '/end.html'
+    let url = '/end.html?mostRecentScore=' + score;
     if(!acc.type) return setTimeout(() => window.location.assign(url), 500)
     const res = await fetch("/update", {
             method: "POST",
@@ -83,7 +83,7 @@ getNewQuestion = async () => {
         const data = await res.json();
         console.log(data.changed, data.diff);
         if(data.changed){
-            url += "?diff=" + data.diff + "&mostRecentScore=" + score;
+            url += "&diff=" + data.diff;
             localStorage.removeItem("highscore");
             localStorage.setItem("highscore", score)
         }
