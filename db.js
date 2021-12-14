@@ -8,6 +8,14 @@ const db = new Datastore("database.db");
 db.loadDatabase();
 app.listen(3000, () => { return })
 
+app.get("/ques", (req, res) => {
+    const getques = spawn("python", ["in_use/fetcher.py"]);
+    getques.stdout.on("data", (data) => {
+    res.status(200).send(JSON.parse(data));
+    });
+});
+
+
 app.get("/all", (req, res) => {
     db.find({}, (err, docs) => {
         res.status(200).send({docs})
