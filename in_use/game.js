@@ -17,7 +17,7 @@ let time = 45;
 
 let questions = [];
 
-fetch('https://opentdb.com/api.php?amount=50&category=9&difficulty=hard&type=multiple').then((res) => {
+fetch('/ques').then((res) => {
         return res.json();
     })
     .then((loadedQuestions) => {
