@@ -89,14 +89,14 @@ async function send(mail, code) {
         port: 587,
         secure: false,
         auth: {
-            user: "yessirpock12@gmail.com",
-            pass: "CHAIFRIENDS!)@%",
+            user: "your email here,
+            pass: "your email password here",
         },
     });
 
 
     let info = await transporter.sendMail({
-        from: '"Verification" yessirpock12@gmail.com',
+        from: '"Verification" your email here',
         to: mail,
         subject: "Verification mail",
         text: "Hello world?",
