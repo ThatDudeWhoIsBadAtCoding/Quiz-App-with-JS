@@ -2,7 +2,7 @@ This Quiz App Has been made by James Quick On Udemy
 
 Link to the entire course for free on udemy :D -> https://www.udemy.com/course/build-a-quiz-app-with-html-css-and-javascript/learn/lecture/13685348?start=0#overview
 
-I thought I should update it by adding a login module with node.js
+I thought I should update it by adding a login module with node.js and some extra features like a timer
 
 `run db.js in terminal using node to boot up and then open localhost 3000`
 **Be sure to change the email and pass in db.js line 81 and 82 (also 88) with your email and pass, otherwise it won't be able to send the mail**
