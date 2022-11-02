@@ -1,12 +1,14 @@
 const express = require("express");
 const { createTransport } = require("nodemailer");
 const app = express();
-app.use(express.json())
-app.use(express.static("in_use"))
-const Datastore = require("nedb")
+const { spawn } = require("child_process");
+app.use(express.json());
+app.use(express.static("in_use"));
+const Datastore = require("nedb");
 const db = new Datastore("database.db");
 db.loadDatabase();
-app.listen(3000, () => { return })
+app.listen(3000, () => { return });
+
 
 app.get("/ques", (req, res) => {
     const getques = spawn("python", ["in_use/fetcher.py"]);
