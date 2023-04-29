@@ -7,10 +7,11 @@ if(!account){
 
 async function check(){
     account = JSON.parse(localStorage.getItem("account"));
+    let highscore = JSON.parse(localStorage.getItem("highscore"));
     console.log(account);
     if(account.type){
         fin.innerHTML = `You have logged in as ${account.name}`
-        document.getElementById("high").innerHTML = `Highscore: ${account.highscore}`
+        document.getElementById("high").innerHTML = `Highscore: ${highscore}`
     }
     else{
         fin.innerHTML == "You are logged in as a guest"
