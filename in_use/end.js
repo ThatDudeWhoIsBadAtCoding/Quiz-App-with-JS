@@ -13,9 +13,13 @@ else {
     if(diff == null){
         displayScore.innerText = "Your final score was " + mostRecentScore + " points!\nLog in to save you score!";
     }
-    else{
+    else if(diff > 0){
         displayScore.innerText = `Your final score was ${mostRecentScore} points! \n You beat your highscore by 
         ${diff} points!`;
-        update(false);
+    }
+    else{
+        displayScore.innerText = `Your final score was ${mostRecentScore} points!`
     }
 }
+
+
