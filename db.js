@@ -91,7 +91,7 @@ async function send(mail, code) {
         port: 587,
         secure: false,
         auth: {
-            user: "your email here,
+            user: "your email here",
             pass: "your email password here",
         },
     });
